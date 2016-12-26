@@ -1,0 +1,20 @@
+---
+- name: Download IUS release
+  get_url:
+    dest=/tmp/ius.rpm 
+    timeout=10
+    url=https://rhel7.iuscommunity.org/ius-release.rpm
+    validate_certs=true
+
+- name: Download EPEL release
+  get_url:
+    dest=/tmp/epel.rpm 
+    timeout=10
+    url=https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    validate_certs=true
+
+- name: Install EPEL release
+  package: name=/tmp/epel.rpm state=installed
+
+- name: Install IUS release
+  package: name=/tmp/ius.rpm state=installed

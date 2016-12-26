@@ -1,2 +1,15 @@
 ---
 # tasks file for nudorm.php
+- include: setup-{{ansible_distribution}}-{{ansible_distribution_major_version}}.yml
+
+- name: Install PHP packages
+  package: name={{ item }} state=present
+  with_items: "{{ php_packages }}"
+  tags: php
+
+- name: Install FPM module
+  package: name={{ php_fpm_package }} state=present
+  when: install_php_fpm
+  tags: fpm
+
+- include: config-fpm.yml

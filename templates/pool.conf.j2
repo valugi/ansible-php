@@ -1,0 +1,109 @@
+;{{ ansible_managed }}
+[{{item.name}}]
+{% if item.prefix is defined %}
+prefix = {{ item.prefix }}
+{% endif %}
+{% if item.user is defined %}
+user = {{ item.user }}
+{% endif %}
+{% if item.group is defined %}
+group = {{ item.group }}
+{% endif %}
+{% if item.listen is defined %}
+listen = {{ item.listen }}
+{% endif %}
+{% if item.listen_backlog is defined %}
+listen.backlog = {{ item.listen_backlog }}
+{% endif %}
+{% if item.listen_owner is defined %}
+listen.owner = {{ item.listen_owner }}
+{% endif %}
+{% if item.listen_group is defined %}
+listen.group = {{ item.listen_group }}
+{% endif %}
+{% if item.listen_mode is defined %}
+listen.mode = {{ item.listen_mode }}
+{% endif %}
+{% if item.listen_acl_users is defined %}
+listen.acl_users = {{ item.listen_acl_users }}
+{% endif %}
+{% if item.listen_acl_groups is defined %}
+listen.acl_groups = {{ item.listen_acl_groups }}
+{% endif %}
+{% if item.listen_allowed_clients is defined %}
+listen.allowed_clients = {{ item.listen_allowed_clients }}
+{% endif %}
+{% if item.pm is defined %}
+pm = {{ item.pm }}
+{% endif %}
+{% if item.pm_max_children is defined %}
+pm.max_children = {{ item.pm_max_children }}
+{% endif %}
+{% if item.pm_start_servers is defined %}
+pm.start_servers = {{ item.pm_start_servers }}
+{% endif %}
+{% if item.pm_min_spare_servers is defined %}
+pm.min_spare_servers = {{ item.pm_min_spare_servers }}
+{% endif %}
+{% if item.pm_max_spare_servers is defined %}
+pm.max_spare_servers = {{ item.pm_max_spare_servers }}
+{% endif %}
+{% if item.pm_process_idle_timeout is defined %}
+pm.process_idle_timeout = {{ item.pm_process_idle_timeout }}
+{% endif %}
+{% if item.pm_max_requests is defined %}
+pm.max_requests = {{ item.pm_max_requests }}
+{% endif %}
+{% if item.pm_status_path is defined %}
+pm.status_path = {{ item.pm_status_path }}
+{% endif %}
+{% if item.ping_path is defined %}
+ping.path = {{ item.ping_path }}
+{% endif %}
+{% if item.ping_response is defined %}
+ping.response = {{ item.ping_response }}
+{% endif %}
+{% if item.access_log is defined %}
+access.log = {{ item.access_log }}
+{% endif %}
+{% if item.access_format is defined %}
+access.format = {{ item.access_format }}
+{% endif %}
+{% if item.slowlog is defined %}
+slowlog = {{ item.slowlog }}
+{% endif %}
+{% if item.request_slowlog_timeout is defined %}
+request_slowlog_timeout = {{ item.request_slowlog_timeout }}
+{% endif %}
+{% if item.request_terminate_timeout is defined %}
+request_terminate_timeout = {{ item.request_terminate_timeout }}
+{% endif %}
+{% if item.rlimit_files is defined %}
+rlimit_files = {{ item.rlimit_files }}
+{% endif %}
+{% if item.rlimit_core is defined %}
+rlimit_core = {{ item.rlimit_core }}
+{% endif %}
+{% if item.chroot is defined %}
+chroot = {{ item.chroot }}
+{% endif %}
+{% if item.chdir is defined %}
+chdir = {{ item.chdir }}
+{% endif %}
+{% if item.catch_workers_output is defined %}
+catch_workers_output = {{ item.catch_workers_output }}
+{% endif %}
+{% if item.clear_env is defined %}
+clear_env = {{ item.clear_env }}
+{% endif %}
+{% if item.security_limit_extensions is defined %}
+security.limit_extensions = {{ item.security_limit_extensions }}
+{% endif %}
+
+
+php_admin_value[error_log] = /var/log/php-fpm/www-error.log
+php_admin_flag[log_errors] = on
+php_value[session.save_handler] = files
+php_value[session.save_path]    = /var/lib/php/fpm/session
+php_value[soap.wsdl_cache_dir]  = /var/lib/php/fpm/wsdlcache
+php_value[opcache.file_cache]  = /var/lib/php/fpm/opcache

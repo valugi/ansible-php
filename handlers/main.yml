@@ -1,2 +1,4 @@
 ---
 # handlers file for nudorm.php
+- name: PHP-FPM
+  service: enabled=true name=php-fpm state=restarted
