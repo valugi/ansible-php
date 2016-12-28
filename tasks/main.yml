@@ -7,6 +7,10 @@
   with_items: "{{ php_packages }}"
   tags: php
 
+- name: Install php.ini file
+  template: dest=/etc/php.ini group=root mode=0644  owner=root src=php.ini.j2
+  tags: php
+
 - name: Install FPM module
   package: name={{ php_fpm_package }} state=present
   when: install_php_fpm
