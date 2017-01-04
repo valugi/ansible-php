@@ -7,6 +7,15 @@
   with_items: "{{ php_packages }}"
   tags: php
 
+- name: Install Xdebug package
+  package: name="{{ xdebug_package }}"
+  when: install_xdebug
+
+- name: copy xdebug.ini
+  template: src=xdebug.ini.j2 dest=/etc/php.d/20-xdebug.ini
+  when: install_xdebug
+
+
 - name: Install php.ini file
   template: dest=/etc/php.ini group=root mode=0644  owner=root src=php.ini.j2
   tags: php

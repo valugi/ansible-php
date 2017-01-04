@@ -1,6 +1,7 @@
 ---
 # defaults file for nobelbiocare.php
 install_php_fpm: no
+install_xdebug: no
 
 php_packages:
   - php70u-bcmath
@@ -19,6 +20,7 @@ php_packages:
   - php70u-xmlrpc
   - php70u-json
 
+xdebug_package: php70u-xdebug
 
 php_expose_php: "On"
 php_max_execution_time: "30"
@@ -132,3 +134,20 @@ php_fpm_pools:
         - session.save_handler: files
         - session.save_path: /var/lib/php/fpm/session
         - soap.wsdl_cache_dir: /var/lib/php/fpm/wsdlcache
+
+php_xdebug_version: 2.5.0
+php_xdebug_module_path: /usr/lib64/php/modules
+php_xdebug_config_filename: xdebug.ini
+php_xdebug_coverage_enable: 1
+php_xdebug_default_enable: 1
+php_xdebug_cli_enable: 1
+php_xdebug_remote_enable: 1
+php_xdebug_remote_connect_back: 1
+php_xdebug_remote_host: localhost
+php_xdebug_remote_port: 9000
+php_xdebug_remote_log: /var/log/xdebug.log
+php_xdebug_remote_autostart: "false"
+php_xdebug_scream: 1
+php_xdebug_idekey: "PHPSTORM"
+php_xdebug_max_nesting_level: 256
+php_xdebug_show_local_vars: 0
