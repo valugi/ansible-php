@@ -1,4 +1,4 @@
-nudorm.php
+nobelbiocare.php
 =========
 
 Insall php with optional php-fpm processor configuration using the IUS repository.
@@ -112,7 +112,7 @@ Example Playbook
 ```yaml
 - hosts: php
   roles:
-    - { name: nudorm.php, install_php_fpm: yes }
+    - { name: nobelbiocare.php, install_php_fpm: yes }
 ```
 
 
@@ -124,4 +124,4 @@ GPLv3
 Author Information
 ------------------
 
-Haydar Ciftci <haydar.ciftci@nudorm.com>
+Haydar Ciftci <haydar.ciftci@nobelbiocare.com>

@@ -1,7 +1,7 @@
 galaxy_info:
-  author: Haydar Ciftci <haydar.ciftci@nudorm.com>
+  author: Haydar Ciftci <haydar.ciftci@nobelbiocare.com>
   description: A minimal PHP-FPM role with fully customizable configuration.
-  company: Nudorm
+  company: nobelbiocare
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value

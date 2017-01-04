@@ -1,5 +1,5 @@
 ---
-# defaults file for nudorm.php
+# defaults file for nobelbiocare.php
 install_php_fpm: no
 
 php_packages:
