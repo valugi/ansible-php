@@ -1,7 +1,7 @@
 nobelbiocare.php
 =========
 
-Insall php with optional php-fpm processor configuration using the IUS repository.
+Install php with optional php-fpm processor configuration using the IUS repository.
 
 Requirements
 ------------
